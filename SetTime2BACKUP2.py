@@ -19,7 +19,7 @@ rtc.datetime(now)
 
 while True:
     (year,month,date,day,hour,minute,second,p1)=rtc.datetime()
-    utime.sleep(0.00001)
+    utime.sleep(0.0001)
     print(rtc.datetime())
     
     s = str(rtc.datetime()[6])
