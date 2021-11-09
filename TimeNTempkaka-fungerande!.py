@@ -34,13 +34,9 @@ while True:
     
     i2c=I2C(1,sda=Pin(2), scl=Pin(3), freq=400000)
     oled = SSD1306_I2C(128, 64, i2c)
-    oled.text("{}:{}:{}".format(h, m, s), 0, 0)
-    oled.show()
-    oled.text("{}/{}".format(d, mnt), 0, 10)
-    oled.show()
-    
-    #Temp and humidity sensor
     T, H = dht22.read()
+    oled.text("{}:{}:{}".format(h, m, s), 0, 0)
+    oled.text("{}/{}".format(d, mnt), 0, 10)
     oled.text('H: ' +"{:0.1f}".format(H)+ "%", 0, 20)
     oled.text('T: ' +"{:0.1f}".format(T)+ "C", 0, 30)
     oled.show()
